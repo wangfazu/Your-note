@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "moreDetialViewController.h"
 #import "addTextViewController.h"
+#import "detialViewController.h"
 
 @interface ViewController ()
 
@@ -20,7 +21,8 @@
     CGFloat h;
     UICollectionView *myCollectionView;
     NSMutableArray *dataSourse;
-    
+    NSArray *photoSourse;
+    NSInteger photoRandomCount;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,6 +34,15 @@
 - (void)initUI{
     //self.view.backgroundColor = [UIColor purpleColor];
     dataSourse = [[NSMutableArray alloc]init];
+    photoSourse = @[@"1.jpg",@"2.jpg",@"3.jpg",@"4.jpg",@"5"];
+    photoRandomCount = arc4random()%5;
+    NSLog(@"---------%ld",(long)photoRandomCount);
+    /**
+     *  创建背景图片
+     */
+    UIImageView *imageView =  [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, w, h)];
+    imageView.image = [UIImage imageNamed:photoSourse[photoRandomCount]];
+    [self.view addSubview:imageView];
     /**
      *  添加两个button到导航栏上面
      左边是更多的东西呈现
@@ -69,9 +80,10 @@
     /**
      *  创建搜索框上线的 搜索按钮
      */
-    UIButton *searchBtn = [[UIButton alloc ]initWithFrame:CGRectMake(w*0.9, 64, w*0.25, h/11)];
-    searchBtn.backgroundColor = [UIColor brownColor];
+    UIButton *searchBtn = [[UIButton alloc ]initWithFrame:CGRectMake(w*0.8, 64, w*0.25, h/11)];
+    //searchBtn.backgroundColor = [UIColor brownColor];
     [self.view addSubview: searchBtn];
+    [searchBtn setTitle:@"搜索" forState:UIControlStateNormal];
     NSLog(@"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈%f",h/11);
     /**
      *  创建右下角的添加btuton
@@ -79,11 +91,14 @@
      *  @return butt0n
      */
     
-    UIButton *addBtn = [[UIButton alloc ]initWithFrame:CGRectMake(w*0.9, h-60, w*0.25, h/12)];
-    addBtn.backgroundColor = [UIColor brownColor];
+    UIButton *addBtn = [[UIButton alloc ]initWithFrame:CGRectMake(w*0.8, h-60, 61, 61)];
+    //addBtn.backgroundColor = [UIColor brownColor];
     [addBtn setTitle:@"+" forState:UIControlStateNormal];
+    UIImage *image =[UIImage imageNamed:@"add"];
+    [addBtn setImage:image forState:UIControlStateNormal];
+    addBtn.tag = 999;
     [[[[UIApplication sharedApplication]delegate]window] addSubview: addBtn];
-    [addBtn addTarget:self action:@selector(addTextClick) forControlEvents:UIControlEventTouchUpInside];
+    [addBtn addTarget:self action:@selector(addTextClick:) forControlEvents:UIControlEventTouchUpInside];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getNotificationtwo:) name:@"theAllAddText" object:nil];
     /**
      *  创建 collocationView
@@ -94,10 +109,12 @@
     layout.itemSize = CGSizeMake(w/2-30, w/2-10);
     layout.minimumLineSpacing=5;
     layout.minimumInteritemSpacing=5;
+    
     layout.scrollDirection=UICollectionViewScrollDirectionVertical;
-    myCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(15, h/10, w-30, h) collectionViewLayout:layout];
+    myCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(15, h/5, w-30, h*0.7) collectionViewLayout:layout];
     myCollectionView.dataSource = self;
     myCollectionView.delegate = self;
+    myCollectionView.alpha = 0.7;
     //myCollectionView.backgroundColor = [UIColor purpleColor];
     [self.view addSubview:myCollectionView];
     
@@ -144,8 +161,14 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     NSLog(@"%ld",indexPath.row);
+    detialViewController *detialVC = [[detialViewController alloc]init];
+    /**
+     *  通过属性传值，将文本全部传递过去
+     */
+    detialVC.textString = dataSourse[indexPath.row];
     moreDetialViewController *vc = [[moreDetialViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController pushViewController:detialVC animated:YES];
+   
 }
 
 - (void)leftBtnClick:(UIButton *)btn{
@@ -162,13 +185,13 @@
   
     NSLog(@"改变tableView的视图形状");
 }
-- (void)addTextClick{
+- (void)addTextClick:(UIButton *)btn{
     /**
      跳转至addText的界面
      */
     addTextViewController *vc = [[addTextViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
-    
+    btn.alpha = 0;
 }
 - (void)getNotificationtwo:(NSNotification *)notification{
     NSDictionary *dic=notification.userInfo;
@@ -185,6 +208,8 @@
 //    NSLog(@"收到通知2了 数据为 %@",dic);
     
     [myCollectionView reloadData];
+    UIButton *btn = [[[[UIApplication sharedApplication]delegate]window] viewWithTag:999];
+    btn.alpha = 1;
 }
 
 

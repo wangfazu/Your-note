@@ -17,6 +17,8 @@
     CGFloat w;
     CGFloat h;
     UITextView *addTextField;
+    NSArray *photoSourse;
+    NSInteger photoRandomCount;
 }
 
 - (void)viewDidLoad {
@@ -27,15 +29,21 @@
     [self dataSouse];
 }
 - (void)initUI{
+    photoSourse = @[@"1.jpg",@"2.jpg",@"3.jpg",@"4.jpg"];
+    photoRandomCount = arc4random()%4;
+    UIImageView *imageView =  [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, w, h)];
+    imageView.image = [UIImage imageNamed:photoSourse[photoRandomCount]];
+    [self.view addSubview:imageView];
+
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    //self.view.backgroundColor = [UIColor whiteColor];
     /**
      创建一个可以写字的面板
      */
-    addTextField = [[UITextView alloc]initWithFrame:CGRectMake(20, 24, w-40, h)];
+    addTextField = [[UITextView alloc]initWithFrame:CGRectMake(20, 64, w-40, h)];
     //addTextField.placeholder = @"快来写点东西吧，你看都空了！";
     addTextField.delegate = self;
-    
+    addTextField.alpha = 0.9;
     [self .view addSubview:addTextField];
     /**
      *  创建提交的按钮
@@ -64,7 +72,8 @@
         return;
     }
     NSString *theAllAddText = addTextField.text;
-    NSLog(@"*********%@",theAllAddText);
+    [[NSUserDefaults standardUserDefaults]setObject:theAllAddText forKey:@"textStrig"];
+    NSLog(@"*********%@",[[NSUserDefaults standardUserDefaults]objectForKey:@"textStrig"]);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"theAllAddText" object:nil userInfo:@{@"便签":theAllAddText}];
     
     

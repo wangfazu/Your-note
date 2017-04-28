@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD4554D91EB2DAD300DC8000 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD4554D81EB2DAD300DC8000 /* 1.jpg */; };
+		DD4554DD1EB2DD9000DC8000 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD4554DB1EB2DD9000DC8000 /* 2.jpg */; };
+		DD4554DE1EB2DD9000DC8000 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD4554DC1EB2DD9000DC8000 /* 3.jpg */; };
+		DD4554E01EB2DDAE00DC8000 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD4554DF1EB2DDAE00DC8000 /* 4.jpg */; };
+		DD4554E21EB2E2DA00DC8000 /* add.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD4554E11EB2E2DA00DC8000 /* add.jpg */; };
+		DD4554E41EB2E57C00DC8000 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4554E31EB2E57C00DC8000 /* 5.png */; };
+		DD4554E61EB2E6BC00DC8000 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4554E51EB2E6BC00DC8000 /* add.png */; };
+		DD4554E91EB2ED5000DC8000 /* detialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4554E81EB2ED5000DC8000 /* detialViewController.m */; };
 		DD8EA4901EB17E11007F984E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8EA48F1EB17E11007F984E /* main.m */; };
 		DD8EA4931EB17E11007F984E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8EA4921EB17E11007F984E /* AppDelegate.m */; };
 		DD8EA4961EB17E11007F984E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8EA4951EB17E11007F984E /* ViewController.m */; };
@@ -37,6 +45,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD4554D81EB2DAD300DC8000 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		DD4554DB1EB2DD9000DC8000 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.jpg; path = ../2.jpg; sourceTree = "<group>"; };
+		DD4554DC1EB2DD9000DC8000 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.jpg; path = ../3.jpg; sourceTree = "<group>"; };
+		DD4554DF1EB2DDAE00DC8000 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		DD4554E11EB2E2DA00DC8000 /* add.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = add.jpg; sourceTree = "<group>"; };
+		DD4554E31EB2E57C00DC8000 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		DD4554E51EB2E6BC00DC8000 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		DD4554E71EB2ED5000DC8000 /* detialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detialViewController.h; sourceTree = "<group>"; };
+		DD4554E81EB2ED5000DC8000 /* detialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detialViewController.m; sourceTree = "<group>"; };
 		DD8EA48B1EB17E11007F984E /* 瞬签.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "瞬签.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD8EA48F1EB17E11007F984E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DD8EA4911EB17E11007F984E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,6 +101,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD4554DA1EB2DD7B00DC8000 /* 图片 */ = {
+			isa = PBXGroup;
+			children = (
+				DD4554E11EB2E2DA00DC8000 /* add.jpg */,
+				DD4554D81EB2DAD300DC8000 /* 1.jpg */,
+				DD4554DB1EB2DD9000DC8000 /* 2.jpg */,
+				DD4554DC1EB2DD9000DC8000 /* 3.jpg */,
+				DD4554DF1EB2DDAE00DC8000 /* 4.jpg */,
+				DD4554E31EB2E57C00DC8000 /* 5.png */,
+				DD4554E51EB2E6BC00DC8000 /* add.png */,
+			);
+			name = "图片";
+			sourceTree = "<group>";
+		};
 		DD8EA4821EB17E11007F984E = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +138,7 @@
 		DD8EA48D1EB17E11007F984E /* 瞬签 */ = {
 			isa = PBXGroup;
 			children = (
+				DD4554DA1EB2DD7B00DC8000 /* 图片 */,
 				DD8EA4911EB17E11007F984E /* AppDelegate.h */,
 				DD8EA4921EB17E11007F984E /* AppDelegate.m */,
 				DD8EA4941EB17E11007F984E /* ViewController.h */,
@@ -115,6 +147,8 @@
 				DD8EA4C21EB1A271007F984E /* moreDetialViewController.m */,
 				DD8EA4C41EB1C52B007F984E /* addTextViewController.h */,
 				DD8EA4C51EB1C52B007F984E /* addTextViewController.m */,
+				DD4554E71EB2ED5000DC8000 /* detialViewController.h */,
+				DD4554E81EB2ED5000DC8000 /* detialViewController.m */,
 				DD8EA4971EB17E11007F984E /* Main.storyboard */,
 				DD8EA49A1EB17E12007F984E /* Assets.xcassets */,
 				DD8EA49C1EB17E12007F984E /* LaunchScreen.storyboard */,
@@ -254,8 +288,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD8EA49E1EB17E12007F984E /* LaunchScreen.storyboard in Resources */,
+				DD4554E01EB2DDAE00DC8000 /* 4.jpg in Resources */,
+				DD4554D91EB2DAD300DC8000 /* 1.jpg in Resources */,
+				DD4554E61EB2E6BC00DC8000 /* add.png in Resources */,
+				DD4554DD1EB2DD9000DC8000 /* 2.jpg in Resources */,
+				DD4554DE1EB2DD9000DC8000 /* 3.jpg in Resources */,
 				DD8EA49B1EB17E12007F984E /* Assets.xcassets in Resources */,
+				DD4554E41EB2E57C00DC8000 /* 5.png in Resources */,
 				DD8EA4991EB17E11007F984E /* Main.storyboard in Resources */,
+				DD4554E21EB2E2DA00DC8000 /* add.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +326,7 @@
 				DD8EA4C31EB1A271007F984E /* moreDetialViewController.m in Sources */,
 				DD8EA4C61EB1C52B007F984E /* addTextViewController.m in Sources */,
 				DD8EA4901EB17E11007F984E /* main.m in Sources */,
+				DD4554E91EB2ED5000DC8000 /* detialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +552,7 @@
 				DD8EA4BA1EB17E12007F984E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD8EA4BB1EB17E12007F984E /* Build configuration list for PBXNativeTarget "瞬签Tests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +561,7 @@
 				DD8EA4BD1EB17E12007F984E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD8EA4BE1EB17E12007F984E /* Build configuration list for PBXNativeTarget "瞬签UITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +570,7 @@
 				DD8EA4C01EB17E12007F984E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
